@@ -91,6 +91,10 @@ pageextension 50102 "ZY Item List Extension" extends "Item List"
         ItemAttributeValue: Record "Item Attribute Value";
         InventorySetup: Record "Inventory Setup";
     begin
+        ShorcutItemAttribute1 := '';
+        ShorcutItemAttribute2 := '';
+        ShorcutItemAttribute3 := '';
+        ShorcutItemAttribute4 := '';
         if InventorySetup.Get() then begin
             if ItemAttributeValueMap.Get(Database::Item, Rec."No.", InventorySetup."Shortcut Item Attribute 1") then
                 if ItemAttributeValue.Get(ItemAttributeValueMap."Item Attribute ID", ItemAttributeValueMap."Item Attribute Value ID") then
